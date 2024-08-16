@@ -1,0 +1,547 @@
+/*
+ * CSS do site "André Lanches"
+ */
+
+/* Seleciona o corpo da página */
+body {
+
+    /** Muda a cor do fundo da página **/
+    background-color: #ebc588;
+
+    /** Muda a fonte do corpo da página e de todos os elementos
+    em seu interior para Candara, Helvetica (se Candara não
+    estiver disponível) ou uma fonte padrão sem serifa (se nem
+    Candara nem Helvetica estiverem disponíveis) **/
+    font-family: Candara, Helvetica, sans-serif;    
+
+    /** Capaz de especificar  margens em elementos da página
+    (partes superior, inferior, esquerda e direita). Alguns
+    elementos no HTML vem com margem embutida pelo navegador.
+    O corpo da página é um deles. Usando a definição abaixo,
+    estamos removendo a margem de todos os lados do corpo da
+    página, fazendo com que os elementos cheguem até as bordas
+    da mesma. É possível especificar valores de margem em px,
+    % e outras unidades de medida. Também é possível especificar
+    a margem de forma individual, para cada lado do elemento
+    (margin-top, margin-right, margin-bottom e margin-left) **/
+    margin: 0;
+}
+
+/** Seleciona um elemento HTML com id definido para "header".
+Em nossa página, vai selecionar a div de cabeçalho **/
+#header {
+
+    /** Define a largura da div para que ocupe todo o espaço
+    disponível do pai. No nosso caso, o pai é o corpo da página.
+    Portanto, a div de cabeçalho ficará com a mesma largura
+    da página **/
+    width: 100%;
+
+    /** Define uma altura fixa para a div de cabeçalho. Nesse
+    caso, 137px **/
+    height: 137px;
+
+    /** Paddings são utilizados para definir espaços ao redor de
+    elementos e atuam como uma "margem interna" (dentro da borda
+    do elemento). Nesse caso, estamos definindo um espaço de 
+    margem interna de 10px na parte superior da div **/
+    padding-top: 10px;
+}
+
+/** Seleciona a div que armazenará os elementos de logo (imagem
+e texto do logo do site) **/
+#logo {
+    /** Definimos uma largura capaz de armazenar a imagem e o texto
+    do logo do site. Neste caso, 425px **/
+    width: 425px;
+
+    /** Definimos uma altura capaz de armazenar a imagem e o texto
+    do logo do site. Neste caso, 100px **/    
+    height: 100px;
+
+    /** Desejamos posicionar esse elemento na página, utilizando
+    elementos de posicionamento como left e top. Para que os mesmos
+    funcionem corretamente, é necessário definir o tipo de
+    posicionamento como um valor diferente do padrão (static).
+    Utilizamos aqui o relative, já que o mesmo vai manter o espaço
+    reservado para os elementos do logo. Se usássemos o absolute,
+    perderiamos o espaço e os elementos que estão posicionados
+    logo abaixo do logo (menu) iriam "subir" e "encavalar" com o 
+    logo **/
+    position:relative;
+
+    /** Desejamos posicionar o logo no meio do pai (da div que ocupa
+    todo o espaço horizontal do corpo da página. Para tanto, podemos
+    definir o posicionamento partindo da esquerda para a metade do
+    tamano do pai (50%) **/
+    left: 50%;
+
+    /** Como o posicionamento left considera o início do elemento
+    (parte mais a esquerda do mesmo) o posicionamento ficará "torto",
+    como se estivesse mais a direita do que deveria. Para corrigir
+    isso, precisamos adicionar uma "margem negativa" ao mesmo, removendo
+    metade de seu tamanho da esquerda. Desta forma, o elemento ficará
+    corretamente posicionado ao meio. Como a largura do elemento foi
+    definida para 340px, a metade deste valor é 170px. Sendo assim
+    definimos a margem do elemento para -212px, visando compensar as
+    margins internas dos elementos. Esta técnica pode ser
+    utilizada sempre que for necessário posicionar elementos no meio
+    da página **/
+    margin-left: -370px;
+}
+
+/** Seleciona o elemento com o id "logoImg". No nosso caso, a imagem
+que representa o logo do site**/
+#logoImg {
+
+    /** Configura o tamanho do logo **/
+    width: 80px;
+    height: 80px;
+
+    /** O comando float faz com que elementos que normalmente
+    quebrariam linhas "flutuem" a esquerda ou a direita, nos
+    cantos do elemento pai onde se encontram. É possível flutuar
+    mais de um elemento, de forma que estes fiquem um ao lado do
+    outro. Estamos aplicando a fluação na imagem e no texto do
+    logo, de forma que fiquem um ao lado do outro **/
+    float: left;
+}
+
+#tituloLogo {
+    
+    /** O comando float faz com que elementos que normalmente
+    quebrariam linhas "flutuem" a esquerda ou a direita, nos
+    cantos do elemento pai onde se encontram. É possível flutuar
+    mais de um elemento, de forma que estes fiquem um ao lado do
+    outro. Estamos aplicando a fluação  no texto de forma que o
+    mesmo fique ao lado da imagem **/
+    float: left;
+
+    /** Muda a cor do texto do logo **/
+    color: #e50021;
+
+    /** Por padrão, usamos o elemento vertical-align: middle
+    para deixar elementos centralizados verticalmente. No entanto
+    Para elementos de texto, é necessário definir o tamanho da linha
+    para o mesmo tamanho que se deseja que o texto fique no meio. A
+    propriedade line-height é utilizada para tanto. Neste caso, estamos
+    configurando a linha para ter o mesmo tamanho da imagem, fazendo
+    com que o texto fique posicionado no meio desta **/
+    line-height: 100px;
+
+    /** Alguns elementos no HTML vem com margem embutida pelo
+    navegador, headers, por exemplo, já possuem valores de margem
+    pré-estabelecidos. Usando a definição abaixo,
+    estamos removendo a margem de todos os lados do h1 de título,
+    fazendo com que o h1 fique posicionado corretamente, sem espaços
+    desnecessários **/
+    margin: 0;
+
+    /** Define o tamanho da fonte para 50px **/
+    font-size: 40px;
+}
+
+/** Seleciona a div principal que irá compor o menu da aplicação
+    (div com id = "menu") **/
+#menu {
+
+    /** Define a largura da div para que ocupe todo o espaço
+    disponível do pai. No nosso caso, o pai é a div de header.
+    Portanto, a div de cabeçalho ficará com a mesma largura
+    da div de cabeçalho, que, atualmente, tem o tamanho página **/
+    width: 100%;
+
+    /** Muda a cor do fundo da página **/
+    background-color: #e50021;
+}
+
+/** Seleciona a lista ordenada que compõe o menu **/
+.listaMenu {
+    
+    /** Definimos uma largura capaz de armazenar os itens de menu.
+    Neste caso, 350px **/
+    width: 350px;
+
+    /** Novamente, queremos posicionar a div na página, utilizando
+    elementos de posicionamento como left e top. Para que os mesmos
+    funcionem corretamente, é necessário definir o tipo de
+    posicionamento como um valor diferente do padrão (static).
+    Utilizamos aqui o relative, já que o mesmo vai manter o espaço
+    reservado para os elementos do menu. Se usássemos o absolute,
+    perderiamos o espaço e o elemento pai iria desaparecer, perdendo
+    a cor de fundo que atravessa a página horizontalmente  **/
+    position: relative;
+
+    /** Novamente, vamos centralizar o elemento horizontalmente.
+    Para tanto, podemos definir seu posicionamento partindo da
+    esquerda para a metade do tamano do pai (50%) **/
+    left: 50%;
+
+    /** Novamente, vamos corrigir o posicionamento não considerar o meio
+    do elemento, e sim o início (left) como cálculo de posicionamento
+    percentual. Adicionamos uma "margem negativa", removendo
+    metade de seu tamanho da esquerda. O elemento ficará
+    corretamente posicionado ao meio. Estamos utilizando um valor maior
+    que a metade do tamanho para compensar a margem que separa  os
+    elementos entre si **/
+    margin-left: -205px;
+
+    /** Definimos uma margem superior ao elemento, de forma que o
+    mesmo fique mais afastado do topo e, ao mesmo tempo,
+    centralizado **/
+    margin-top: 7px;
+}
+
+/** Seleciona todos os elementos de lista do item com a classe
+    "listaMenu" **/
+.listaMenu li {
+
+    /** A propriedade display permite configurar como a disposição
+    de elementos HTML é feita na página. Por padrão, elementos de
+    texto tem o display com o valor de "inline" (elementos são
+    exibidos um ao lado do outro" e elementos de imagens, divs, e
+    etc tem o display configurado com display "block" (são
+    posicionados de forma que ocupem um espaço vertical fixo, de
+    forma que outros elementos com display block caem para linha
+    de baixo). Abaixo, estamos utilizando o tipo especial de exibição
+    denominado inline-block, que mistura os dois elementos. Elementos
+    com display inline-block são organizados sequencialmente, uma ao
+    lado do outro, como texto, mas podem ter elementos de
+    dimensionamento e etc, como elementos em blocos.
+    Elementos display inline-block são muito úteis para transformar
+    listas verticais em elementos horizontais, muito úteis em menus **/
+    display: inline-block;
+}
+
+/** Seleciona todos os links dentro de listas que estão dentro de
+elementos com a classe "listaMenu" **/
+.listaMenu li a {
+
+    /** Remove o sublinhado de links **/
+    text-decoration: none;
+
+    /** Configura o tamanho de 50px para os itens de link da lista **/
+    height: 50px;
+
+    /** Novamente, utilizamos o line-height para centralizar
+    elementos de texto verticalmente **/
+    line-height: 30px;
+
+    /** Utilizamos os elementos de padding para fazer com que
+    os itens de menu ganhem espaço horizontal (como botões).
+    Isso ajuda a distanciá-los (caso contrário, ficariam grudados
+    horizontalmente uns nos outros) e, quando os links tiverem a
+    cor de fundo alterada para branco, parecerem "botões". Estamos
+    definindo apenas as margens internas a esquerda e a direita, as
+    demais permanecem inalteradas **/
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/** Seleciona elementos de link dentro de listas com a calsse
+"listaMenu" quando estão em estado normal e quando estão
+já visitados **/
+.listaMenu li a:link,
+.listaMenu li a:visited {
+
+    /** Muda a cor do texto dos links para branco **/
+    color: white;
+}
+
+/** Seleciona elementos de link dentro de listas com a calsse
+"listaMenu" quando estão com o mouse apontado **/
+.listaMenu li a:hover {
+
+    /** Muda a cor do link **/
+    color: #e50021;
+
+    /** Muda a cor de fundo para branco **/
+    background-color: white;
+}
+
+/** Selecionamos a div principal, que irá armazenar todo o conteúdo
+principal do site **/
+#content {
+
+    /** Definindo um tamanho arbitrário para a div principal.
+    Neste caso, 700px. **/
+    width: 700px;
+    
+    /** Definimos a cor branca para a div principal **/
+    background-color: #F8FFA3;
+
+    /** Usando o tipo de posicionamento junto ao left e ao margin
+    -left para centralizar a div principal horizontalmente na página **/
+    position: relative;
+    left: 50%;
+    margin-left: -350px;
+    
+}
+
+/** Selecionamos a div que contém os elementos de promoção **/
+#promotionBanner {
+
+    /** Configura o tamanho de 200px para o banner promocional **/
+    height: 250px;
+
+    /** Configura uma imagem de fundo da promoção **/
+    background-image: url('./images/promoçãobanner.gif');
+}
+
+#tituloConteudo {
+    /** Define a cor **/
+    color: #e50021;
+        
+    /** Alinha o texto do título no centro **/
+    text-align: center;
+    
+    /** Reduz a margem inferior padrão do H **/
+    margin-bottom: 10px;
+
+    
+}
+
+/** Seleciona os elementos de tabela dentro da div com id
+"areaProdutos" **/
+#areaProdutos table {
+    /** Propriedade utilizada em tabelas para dar mais espaço entre cada
+    célula **/    
+    border-spacing: 25px;
+
+    /** Mantém os elementos de células com margens entre elas **/
+    border-collapse: separate;
+
+    /** Alinha os elementos no centro da célula por padrão **/
+    text-align: center;
+}
+
+/** Seleciona os elementos de td dentro da div com id
+"areaProdutos" **/
+#areaProdutos td {    
+
+    /** Configura uma largura padrão para cada célula **/
+    width: 250px;
+    
+    /** Configura uma cor padrão para o texto das células **/
+    color: #e50021;
+
+    /** Configura um tamanho de fonte padrão para o texto das células **/
+    font-size: 20px;
+}
+
+/** Seleciona os elementos de imagem dentro de tds dentro da div com id
+"areaProdutos" **/
+#areaProdutos td img {
+
+    /** Configura um tamanho padrão para as imagens dos produtos **/
+    width: 150px;
+    height: 150px;
+
+    /** Separa a imagem do título acima desta **/
+    margin-top: 5px;
+
+    /** Esta propriedade permite definir o quão arredondados os cantos
+    do elemento serão. 50% faz com que elementos que tem tamanho de altura
+    e largura iguais se tornem circulos **/
+    border-radius: 50%;
+    
+    /** Permite especifiar a borda do elemento. O primeiro parâmetro é a
+    espessura da borda, o segundo é o tipo da borda (solida, pontilhada, etc)
+    e o terceiro, sua cor **/
+    border: 2px solid #e50021;
+}
+
+/** Seleciona elementos anotados com a classe "tituloProduto" **/
+.tituloProduto {
+    
+    /** Faz com que a fonte do elemento fique em negrito **/
+    font-weight: bold;
+    
+    /** Remove a margem padrão dos elementos P **/
+    margin: 0;
+}
+
+/** Seleciona elementos anotados com a classe "precoProduto" **/
+.precoProduto {
+
+    /** Remove a margem padrão dos elementos P **/
+    margin: 0;
+    color: black;
+}
+
+/** Seleciona a div com o íncone e o telefone de entrega (id "entrega") **/
+#entrega {
+
+    /** Configura o posicionamento como fixo. Desta forma, o elemento
+    ficará posicionado sempre relativo a área da tela do browser (viewport) **/
+    position: fixed;
+
+    /** Posiciona o elemento 30px em relação a margem inferior **/
+    bottom: 30px;
+
+    /** Posiciona o elemento 10px em relação a margem direita **/
+    right: 10px;
+
+    /** Define um tamanho para o elemento **/
+    height: 100px;
+    width: 300px;
+}
+
+/** Seleciona os elementos de imagem dentro elementos com id "entrega" **/
+#entrega img {
+
+    /** Transforma o elemento num círculo **/
+    border-radius: 50%;
+
+    /** Define uma borda para o elemento **/
+    border: 3px solid #e50021;
+}
+
+/** Seleciona elementos com id "tel" **/
+#tel {
+
+    /** Configura a posição como absoluta, visando remover o espaço
+    reservado para o item e posicioná-lo arbitrariamente **/
+    position: absolute;
+
+    /** Configura uma posição horizontal  para o item **/
+    left: 120px;
+
+    /** Define uma altura para o item **/
+    height: 75px;
+
+    /** Define a cor de fundo do item **/
+    background-color: #e50021;
+
+    /** Define a cor do texto para branco **/    
+    color: white;
+
+    /** Afasta o elemento do topo em 13px **/
+    margin-top: 13px;
+
+    /** Adiciona borda interna ao elemento no tamanho de 10px **/
+    padding: 10px;
+
+    /** Remove a borda interna da parte inferior  **/
+    padding-bottom: 0;
+
+    /** Arredonda um pouco os cantos da div **/
+    border-radius: 15px;
+}
+
+/** Seçeciona os elementos h4 de um elemento com id "tel" **/
+#tel h4 {
+
+    /** Remove as margens padrão do H **/
+    margin: 0;
+
+    /** Define um tamanho de fonte para o H4 em 28px **/
+    font-size: 25px;
+}
+
+/** Seçeciona os elementos h5 de um elemento com id "tel" **/
+#tel h5 {
+
+    /** Remove as margens padrão do H **/
+    margin: 0;
+
+    /** Adiciona uma pequena margem a parte superior do h5 **/
+    margin-top: 10px;
+}
+
+/** Seçeciona os elementos a de um elemento com id "tel" **/
+#tel a {
+
+    /** Define a cor do link como branco **/
+    color: white;
+
+    /** Remove o underline do link **/
+    text-decoration: none;
+}
+
+
+#contato-lista {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;  
+}
+
+#listaContato {
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    list-style: none;
+    margin: 30px;
+}
+
+#texto-nos {
+    color: #e50021;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+#paragrafo-nos {
+    margin: 0;
+    padding: 10px;
+    text-align: justify;
+}
+
+#paragrafo-contato {
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.footer-link {
+    text-decoration: none;
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+} 
+
+#footer_social_media .footer-link {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    transition: all 0.4s;
+    margin: 50px;
+}
+
+#footer_social_media .footer-link i {
+    font-size: 1.25rem;    
+}
+
+#footer_social_media .footer-link:hover {
+    opacity: 0.8;
+}
+
+#instagram-message {
+    font-size: 10px;
+}
+
+#instagram {
+    background-color: #e50021;
+    color: black;
+}
+
+#facebook {
+    background-color: #e50021;
+    color: black;
+}
+
+#whatsapp {
+    background-color: #e50021;
+    color: black;
+}
+
+
+
+
